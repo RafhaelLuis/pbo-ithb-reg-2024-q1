@@ -71,16 +71,16 @@ public class View {
         System.out.println("3. First Class");
         System.out.println("-----------------------------");
     }
-
+    
     public static Tiket menuEkonomi(){
         System.out.println("Input Berat");
         double beratBagasi = Double.parseDouble(scan.nextLine());
-
+        
         System.out.println("Input Jarak Tempuh");
         double jaraktempuh = Double.parseDouble(scan.nextLine());
-
+        
         Tiket tiket = new TiketEkonomi(jaraktempuh, beratBagasi);
-
+        
         tiket.setHarga(Controller.hitungBiayaEkonomi(beratBagasi, jaraktempuh));
         
         totalAkhir += tiket.getHarga();
@@ -96,7 +96,7 @@ public class View {
         System.out.println("Input Jarak Tempuh");
         double jaraktempuh = Double.parseDouble(scan.nextLine());
         
-        System.out.println("Input Afirmasi Makanan");
+        System.out.println("Input Afirmasi Makanan(true/false)");
         boolean afirmasiMakanan = Boolean.parseBoolean(scan.nextLine());
         
         Tiket tiket = new TiketBusiness(jaraktempuh, beratBagasi, afirmasiMakanan);
@@ -114,13 +114,15 @@ public class View {
         System.out.println("Input Jarak Tempuh");
         double jaraktempuh = Double.parseDouble(scan.nextLine());
         
-        System.out.println("Input Afirmasi Makanan");
+        System.out.println("Input Afirmasi Makanan(true/false)");
         boolean hiasan = Boolean.parseBoolean(scan.nextLine());
         if (hiasan==true) {
+            System.out.println("-----------------------------");
             System.out.println("Berhasil membeli makanan");
+            System.out.println("-----------------------------");
         }
         
-        System.out.println("Input Afirmasi Asuransi");
+        System.out.println("Input Afirmasi Asuransi(true/false)");
         boolean afirmasiAsuransi = Boolean.parseBoolean(scan.nextLine());
         
         Tiket tiket = new TiketFirstClass(jaraktempuh, afirmasiAsuransi);
